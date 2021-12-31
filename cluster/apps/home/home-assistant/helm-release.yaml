@@ -34,7 +34,7 @@ spec:
         tls:
           - secretName: home-tls
             hosts:
-              - "hass.jw2.org"
+              - "home.jw2.org"
 
     persistence:
       config:
