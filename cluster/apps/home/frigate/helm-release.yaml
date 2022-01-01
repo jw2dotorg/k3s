@@ -99,7 +99,7 @@ spec:
           - -hwaccel_device
           - /dev/dri/renderD128
           - -hwaccel_output_format
-          - yuv420p
+          - vaapi
         input_args: 
           - -avoid_negative_ts
           - make_zero 
@@ -120,15 +120,14 @@ spec:
       cameras:
         backyard:
           ffmpeg:
-            hwaccel_args: -c:v h264_v4l2m2m
             inputs:
               - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.1.108:554
                 roles:
                   - rtmp
                   - record
-          detect:
-            width: 2688
-            height: 1520
+          #detect:
+          #  width: 2688
+          #  height: 1520
           rtmp:
             enabled: True
           record:
