@@ -100,9 +100,21 @@ spec:
           - /dev/dri/renderD128
           - -hwaccel_output_format
           - yuv420p
+        input_args: 
+          - -avoid_negative_ts
+          - make_zero 
+          - -fflags
+          - +genpts+discardcorrupt 
+          - -rtsp_transport 
+          - tcp 
+          - -stimeout 
+          - 5000000 
+          - -use_wallclock_as_timestamps 
+          - 1
         output_args:
           record:
-            -codec:v h264_vaapi
+            - -codec:v 
+            - h264_vaapi
 
        # Specify camera's
       cameras:
@@ -115,8 +127,8 @@ spec:
                   - rtmp
                   - record
           detect:
-            width: 1280
-            height: 720
+            width: 2688
+            height: 1520
           rtmp:
             enabled: True
           record:
