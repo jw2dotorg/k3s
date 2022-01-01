@@ -111,10 +111,6 @@ spec:
           - 5000000 
           - -use_wallclock_as_timestamps 
           - 1
-        output_args:
-          record:
-            - -codec:v 
-            - h264_vaapi
 
        # Specify camera's
       cameras:
