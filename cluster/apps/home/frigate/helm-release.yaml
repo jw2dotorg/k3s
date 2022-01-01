@@ -99,7 +99,7 @@ spec:
           - -hwaccel_device
           - /dev/dri/renderD128
           - -hwaccel_output_format
-          - h264_vaapi
+          - vaapi
         input_args: 
           - -avoid_negative_ts
           - make_zero 
