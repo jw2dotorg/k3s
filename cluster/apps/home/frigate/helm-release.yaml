@@ -100,6 +100,9 @@ spec:
           - /dev/dri/renderD128
           - -hwaccel_output_format
           - yuv420p
+        output_args:
+          record:
+            -codec:v h264_vaapi
 
        # Specify camera's
       cameras:
