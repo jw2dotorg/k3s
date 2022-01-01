@@ -118,8 +118,6 @@ spec:
             events:
               retain:
                 default: 14
-          detect:
-            enabled: False
           snapshots:
             enabled: True
             timestamp: False
