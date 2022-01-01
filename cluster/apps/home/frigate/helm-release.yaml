@@ -99,18 +99,7 @@ spec:
           - -hwaccel_device
           - /dev/dri/renderD128
           - -hwaccel_output_format
-          - vaapi
-        input_args: 
-          - -avoid_negative_ts
-          - make_zero 
-          - -fflags
-          - +genpts+discardcorrupt 
-          - -rtsp_transport 
-          - tcp 
-          - -stimeout 
-          - 5000000 
-          - -use_wallclock_as_timestamps 
-          - 1
+          - yuv420p
 
        # Specify camera's
       cameras:
