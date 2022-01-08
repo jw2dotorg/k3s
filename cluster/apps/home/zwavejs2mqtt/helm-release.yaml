@@ -65,9 +65,3 @@ spec:
         type: hostPath
         hostPath: '/dev/serial/by-id/usb-Silicon_Labs_Zooz_ZST10 700_Z-Wave_Stick_0001-if00-port0'
         hostPathType: CharDevice
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-          - matchExpressions:
-            - {key: "feature.node.kubernetes.io/custom-zwave", operator: In, values: ["true"]}
