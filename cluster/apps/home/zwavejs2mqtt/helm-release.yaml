@@ -44,13 +44,14 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           cert-manager.io/cluster-issuer: "letsencrypt-production"
         hosts:
-        - host: "z.jw2.org"
+        - host: "z.${SECRET_DOMAIN}
           paths:
           - path: /
             pathType: Prefix
         tls:
         - hosts:
-          - "z.jw2.org"
+          - "z.${SECRET_DOMAIN}"
+          secretName: zwavejs2mqtt-tls
     persistence:
       config:
         enabled: true
