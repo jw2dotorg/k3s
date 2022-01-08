@@ -40,17 +40,11 @@ spec:
       main:
         enabled: true
         ingressClassName: "traefik"
-        annotations:
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
         hosts:
         - host: "z.jw2.org"
           paths:
           - path: /
             pathType: Prefix
-        tls:
-        - hosts:
-          - "z.jw2.org"
     persistence:
       config:
         enabled: true
