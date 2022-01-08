@@ -64,5 +64,5 @@ spec:
       usb:
         enabled: true
         type: hostPath
-        hostPath: '/dev/serial/by-id/usb-Silicon_Labs_Zooz_ZST10 700_Z-Wave_Stick_0001-if00-port0'
+        hostPath: /dev/serial/by-id/usb-Silicon_Labs_Zooz_ZST10
         hostPathType: CharDevice
