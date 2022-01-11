@@ -106,7 +106,7 @@ spec:
         backyard:
           ffmpeg:
             inputs:
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.1.108:554
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.183:554
                 roles:
                   - rtmp
                   - record
