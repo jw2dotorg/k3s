@@ -24,7 +24,7 @@ spec:
       main:
         type: LoadBalancer
         externalIPs:
-          - 172.16.0.86
+          - "${LB_MOSQUITTO_IP}"
         externalTrafficPolicy: Local
     auth:
       enabled: true
