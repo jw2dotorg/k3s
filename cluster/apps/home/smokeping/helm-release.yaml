@@ -1,0 +1,51 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: smokeping
+  namespace: home
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: smokeping
+      version: 0.1.24
+      sourceRef:
+        kind: HelmRepository
+        name: smokeping-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    env:
+      TZ: "America/New_York"
+    securityContext:
+      privileged: true
+    service:
+      main:
+        ports:
+          websockets:
+            enabled: true
+            port: 3000
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: "web"
+        hosts:
+        - host: "ping.${SECRET_DOMAIN}"
+          paths:
+          - path: /
+            pathType: Prefix
+    persistence:
+      config:
+        enabled: true
+        emptyDir: false
+        mountPath: /config
+      data:
+        enabled: true
+        emptyDir: false
+        mountPath: /data
+        accessMode: ReadWriteOnce
+        size: "1Gi"
+ 

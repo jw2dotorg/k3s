@@ -5,3 +5,4 @@ resources:
   - mosquitto
   - frigate
   - zwavejs2mqtt
+  - smokeping
