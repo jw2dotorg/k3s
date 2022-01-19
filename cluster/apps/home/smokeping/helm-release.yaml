@@ -23,11 +23,18 @@ spec:
     ingress:
       enabled: true
       ingressClassName: "traefik"
+      annotations:
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
       hosts:
       - host: "ping.${SECRET_DOMAIN}"
         paths:
         - path: /
           pathType: Prefix
+      tls:
+        - hosts:
+            - "ping.${SECRET_DOMAIN}"
+          secretName: smokeping-tls
     persistence:
       config:
         enabled: true
