@@ -117,6 +117,13 @@ spec:
                 roles:
                   - rtmp
                   - record
+        cam3:
+          ffmpeg:
+            inputs:
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554
+                roles:
+                  - rtmp
+                  - record
           #detect:
           #  width: 2688
           #  height: 1520
