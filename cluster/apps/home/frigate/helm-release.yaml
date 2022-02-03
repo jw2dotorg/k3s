@@ -113,29 +113,10 @@ spec:
               - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.183:554/live
                 roles:
                   - record
-        cam2:
-          ffmpeg:
-            inputs:
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.162:554/cam/realmonitor?channel=1&subtype=2
-                roles:
-                  - detect
-                  - rtmp
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.162:554/live
-                roles:
-                  - record
-        cam3:
-          ffmpeg:
-            inputs:
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554/cam/realmonitor?channel=1&subtype=2
-                roles:
-                  - detect
-                  - rtmp
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554/live
-                roles:
-                  - record
-          #detect:
-          #  width: 2688
-          #  height: 1520
+          detect:
+            width: 1280
+            height: 720
+            fps: 10
           rtmp:
             enabled: True
           record:
@@ -149,7 +130,60 @@ spec:
             timestamp: False
             retain:
               default: 14
-        # --
+        cam2:
+          ffmpeg:
+            inputs:
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.162:554/cam/realmonitor?channel=1&subtype=2
+                roles:
+                  - detect
+                  - rtmp
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.162:554/live
+                roles:
+                  - record
+          detect:
+            width: 1280
+            height: 720
+            fps: 10
+          rtmp:
+            enabled: True
+          record:
+            enabled: True
+            retain_days: 14
+            events:
+              retain:
+                default: 14
+          snapshots:
+            enabled: True
+            timestamp: False
+            retain:
+              default: 14
+        cam3:
+          ffmpeg:
+            inputs:
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554/cam/realmonitor?channel=1&subtype=2
+                roles:
+                  - detect
+                  - rtmp
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554/live
+                roles:
+                  - record
+          detect:
+            width: 1280
+            height: 720
+            fps: 10
+          rtmp:
+            enabled: True
+          record:
+            enabled: True
+            retain_days: 14
+            events:
+              retain:
+                default: 14
+          snapshots:
+            enabled: True
+            timestamp: False
+            retain:
+              default: 14
        
     podAnnotations:
       configmap.reloader.stakater.com/reload: "frigate-config"
