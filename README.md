@@ -1,8 +1,4 @@
-# Template for deploying k3s backed by Flux
-
-Highly opinionated template for deploying a single [k3s](https://k3s.io) cluster with [Ansible](https://www.ansible.com) and [Terraform](https://www.terraform.io) backed by [Flux](https://toolkit.fluxcd.io/) and [SOPS](https://toolkit.fluxcd.io/guides/mozilla-sops/).
-
-The purpose here is to showcase how you can deploy an entire Kubernetes cluster and show it off to the world using the [GitOps](https://www.weave.works/blog/what-is-gitops-really) tool [Flux](https://toolkit.fluxcd.io/). When completed, your Git repository will be driving the state of your Kubernetes cluster. In addition with the help of the [Ansible](https://github.com/ansible-collections/community.sops), [Terraform](https://github.com/carlpett/terraform-provider-sops) and [Flux](https://toolkit.fluxcd.io/guides/mozilla-sops/) SOPS integrations you'll be able to commit Age encrypted secrets to your public repo.
+# k3s cluster backed by [Flux](https://toolkit.fluxcd.io/)
 
 ## Overview
 
@@ -13,11 +9,9 @@ The purpose here is to showcase how you can deploy an entire Kubernetes cluster 
 - [Post installation](https://github.com/k8s-at-home/template-cluster-k3s#mega-post-installation)
 - [Thanks](https://github.com/k8s-at-home/template-cluster-k3s#handshake-thanks)
 
-## :wave:&nbsp; Introduction
+## Introduction
 
-The following components will be installed in your [k3s](https://k3s.io/) cluster by default. They are only included to get a minimum viable cluster up and running. You are free to add / remove components to your liking but anything outside the scope of the below components are not supported by this template.
-
-Feel free to read up on any of these technologies before you get started to be more familiar with them.
+The following components are installed by default. They are only included to get a minimum viable cluster up and running. 
 
 - [cert-manager](https://cert-manager.io/) - SSL certificates - with Cloudflare DNS challenge
 - [calico](https://www.tigera.io/project-calico/) - CNI (container network interface)
@@ -30,11 +24,6 @@ Feel free to read up on any of these technologies before you get started to be m
 - [system-upgrade-controller](https://github.com/rancher/system-upgrade-controller) - upgrade k3s
 - [traefik](https://traefik.io) - ingress controller
 
-For provisioning the following tools will be used:
-
-- [Ubuntu](https://ubuntu.com/download/server) - this is a pretty universal operating system that supports running all kinds of home related workloads in Kubernetes
-- [Ansible](https://www.ansible.com) - this will be used to provision the Ubuntu operating system to be ready for Kubernetes and also to install k3s
-- [Terraform](https://www.terraform.io) - in order to help with the DNS settings this will be used to provision an already existing Cloudflare domain and DNS settings
 
 ## :memo:&nbsp; Prerequisites
 
@@ -51,8 +40,7 @@ For provisioning the following tools will be used:
 #### Required
 
 | Tool                                               | Purpose                                                                                                                                 |
-|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| [ansible](https://www.ansible.com)                 | Preparing Ubuntu for Kubernetes and installing k3s                                                                                      |
+|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------                 | Preparing Ubuntu for Kubernetes and installing k3s                                                                                      |
 | [direnv](https://github.com/direnv/direnv)         | Exports env vars based on present working directory                                                                                     |
 | [flux](https://toolkit.fluxcd.io/)                 | Operator that manages your k8s cluster based on your Git repository                                                                     |
 | [age](https://github.com/FiloSottile/age)          | A simple, modern and secure encryption tool (and Go library) with small explicit keys, no config options, and UNIX-style composability. |
