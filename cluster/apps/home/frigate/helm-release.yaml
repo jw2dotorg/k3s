@@ -106,11 +106,11 @@ spec:
         backyard:
           ffmpeg:
             inputs:
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.183:554/cam/realmonitor?channel=1&subtype=2
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-backyard/cam/realmonitor?channel=1&subtype=2
                 roles:
                   - detect
                   - rtmp
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.183:554/live
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-backyard/live
                 roles:
                   - record
           detect:
@@ -130,14 +130,14 @@ spec:
             timestamp: False
             retain:
               default: 14
-        cam2:
+        driveway:
           ffmpeg:
             inputs:
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.162:554/cam/realmonitor?channel=1&subtype=2
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-driveway/cam/realmonitor?channel=1&subtype=2
                 roles:
                   - detect
                   - rtmp
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.162:554/live
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-driveway/live
                 roles:
                   - record
           detect:
@@ -157,14 +157,14 @@ spec:
             timestamp: False
             retain:
               default: 14
-        cam3:
+        porch:
           ffmpeg:
             inputs:
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554/cam/realmonitor?channel=1&subtype=2
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-porch/cam/realmonitor?channel=1&subtype=2
                 roles:
                   - detect
                   - rtmp
-              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@192.168.30.163:554/live
+              - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-porch/live
                 roles:
                   - record
           detect:
