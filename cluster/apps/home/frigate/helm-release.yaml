@@ -82,9 +82,12 @@ spec:
       #     device: usb
 
       # Global objects configuration
-      # objects:
-      #   track:
-      #     - person
+      objects:
+         track:
+           - person
+           - dog
+           - cat
+           - bird
       #   filters:
       #     person:
       #       min_area: 2500
