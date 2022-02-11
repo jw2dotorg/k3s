@@ -88,6 +88,8 @@ spec:
            - dog
            - cat
            - bird
+           - car
+           - bicycle
       #   filters:
       #     person:
       #       min_area: 2500
