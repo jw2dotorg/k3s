@@ -96,6 +96,9 @@ spec:
       #       max_area: 100000
       #       threshold: 0.7
 
+      birdseye:
+        mode: objects
+
       # Global ffmpeg configuration
       ffmpeg:
         hwaccel_args:
