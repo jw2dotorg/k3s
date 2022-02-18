@@ -87,7 +87,6 @@ spec:
            - person
            - dog
            - cat
-           - bird
            - car
            - bicycle
       #   filters:
