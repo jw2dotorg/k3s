@@ -21,6 +21,11 @@ spec:
       tag: 2022.2.8
     env:
       TZ: America/NewYork
+    service:
+      main:
+        type: LoadBalancer
+        externalIPs:
+          - "${SVC_HOME_ASSISTANT_ADDR}"
     ingress:
       main:
         enabled: true
