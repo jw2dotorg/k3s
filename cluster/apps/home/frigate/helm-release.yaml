@@ -22,7 +22,7 @@ spec:
   values:
     image:
       repository: blakeblackshear/frigate
-      tag: 0.10.0-amd64
+      tag: 0.10.0-beta6-amd64
     ingress:
       main:
         enabled: true
