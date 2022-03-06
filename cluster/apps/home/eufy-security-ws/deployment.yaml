@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eufy-security-ws
+spec:
+  selector:
+    matchLabels:
+      app: eufy-security-ws
+  template:
+    metadata:
+      labels:
+        app: eufy-security-ws
+    spec:
+      containers:
+      - name: eufy-security-ws
+        image: bropat/eufy-security-ws:0.8.4
+        ports:
+        - containerPort: 3000
+        env:
+        - name: USERNAME
+          value: ${EUFY_USERNAME}
+        - name: PASSWORD
+          value: ${EUFY_PASSWORD}

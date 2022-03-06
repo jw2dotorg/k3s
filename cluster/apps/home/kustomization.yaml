@@ -6,3 +6,4 @@ resources:
   - frigate
   - zwavejs2mqtt
   - smokeping
+  - eufy-security-ws
