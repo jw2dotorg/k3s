@@ -22,7 +22,7 @@ spec:
       tag: 5.8.3-debian-10-r2
     ingress:
       enabled: true
-      hostname: "house.local"
+      hostname: "house.${SECRET_DOMAIN}"
       tls: true
       ingressClassName: "traefik"
       annotations:
