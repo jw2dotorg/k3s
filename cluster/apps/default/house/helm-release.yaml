@@ -21,21 +21,13 @@ spec:
       repository: bitnami/wordpress
       tag: 5.8.3-debian-10-r2
     ingress:
-      main:
-        enabled: true
-        ingressClassName: "traefik"
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-        hosts:
-          - host: "house.local"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "house.local"
-            secretName: "house-tls"
+      enabled: true
+      hostname: "house.local"
+      tls: true
+      ingressClassName: "traefik"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     persistence:
       data:
         enabled: true
