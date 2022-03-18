@@ -30,3 +30,5 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     persistence:
       storageClass: nfs-client
+    mariadb:
+      enabled: true
