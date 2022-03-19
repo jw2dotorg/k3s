@@ -20,6 +20,8 @@ spec:
     image:
       repository: bitnami/wordpress
       tag: 5.9.2-debian-10-r2
+    service:
+      type: ClusterIP
     ingress:
       enabled: true
       hostname: "house.${SECRET_DOMAIN}"
