@@ -28,7 +28,7 @@ spec:
       tls: true
       ingressClassName: "traefik"
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
         traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     persistence:
       storageClass: nfs-client
