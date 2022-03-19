@@ -37,4 +37,7 @@ spec:
       auth:
         database: house
         username: house
+      primary:
+        persistence:
+          storageClass: nfs-client
     wordpressScheme: https
