@@ -501,7 +501,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Bucket is the Schema for the buckets API.
@@ -1110,7 +1110,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: GitRepository is the Schema for the gitrepositories API.
@@ -1515,7 +1515,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: HelmChart is the Schema for the helmcharts API.
@@ -1792,7 +1792,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: HelmChart is the Schema for the helmcharts API.
@@ -2111,11 +2111,11 @@ spec:
             description: HelmReleaseSpec defines the desired state of a Helm release.
             properties:
               chart:
-                description: Chart defines the template of the v1beta2.HelmChart that
+                description: Chart defines the template of the v1beta1.HelmChart that
                   should be created for this HelmRelease.
                 properties:
                   spec:
-                    description: Spec holds the template for the v1beta2.HelmChartSpec
+                    description: Spec holds the template for the v1beta1.HelmChartSpec
                       for this HelmRelease.
                     properties:
                       chart:
@@ -2123,7 +2123,7 @@ spec:
                           at in the SourceRef.
                         type: string
                       interval:
-                        description: Interval at which to check the v1beta2.Source
+                        description: Interval at which to check the v1beta1.Source
                           for updates. Defaults to 'HelmReleaseSpec.Interval'.
                         type: string
                       reconcileStrategy:
@@ -2137,7 +2137,7 @@ spec:
                         - Revision
                         type: string
                       sourceRef:
-                        description: The name and namespace of the v1beta2.Source
+                        description: The name and namespace of the v1beta1.Source
                           the chart is available at.
                         properties:
                           apiVersion:
@@ -2182,7 +2182,7 @@ spec:
                       version:
                         default: '*'
                         description: Version semver expression, ignored for charts
-                          from v1beta2.GitRepository and v1beta2.Bucket sources. Defaults
+                          from v1beta1.GitRepository and v1beta1.Bucket sources. Defaults
                           to latest when omitted.
                         type: string
                     required:
@@ -3151,7 +3151,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: HelmRepository is the Schema for the helmrepositories API.
@@ -3948,7 +3948,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Kustomization is the Schema for the kustomizations API.
@@ -4347,7 +4347,7 @@ spec:
                   Defaults to 'Interval' duration.
                 type: string
               validation:
-                description: 'Deprecated: Not used in v1beta2.'
+                description: 'Deprecated: Not used in v1beta1.'
                 enum:
                 - none
                 - client
