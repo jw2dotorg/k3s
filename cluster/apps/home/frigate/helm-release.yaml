@@ -251,7 +251,6 @@ spec:
           ffmpeg:
             inputs:
               - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@10.0.20.26:554/cam/realmonitor?channel=1&subtype=1&authbasic=64"
-
                 roles:
                   - detect
                   - rtmp
