@@ -247,33 +247,33 @@ spec:
             timestamp: False
             retain:
               default: 14
-        #doorbell:
-        #  ffmpeg:
-        #    inputs:
-        #      - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@10.0.20.26:554/cam/realmonitor?channel=1&subtype=1&authbasic=64
-        #        roles:
-        #          - detect
-        #          - rtmp
-        #      - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@10.0.20.26:554/
-        #        roles:
-        #          - record
-        #  detect:
-        #    width: 1280
-        #    height: 720
-        #    fps: 10
-        #  rtmp:
-        #    enabled: True
-        #  record:
-        #    enabled: True
-        #    retain_days: 14
-        #    events:
-        #      retain:
-        #        default: 14
-        #  snapshots:
-        #    enabled: True
-        #    timestamp: False
-        #    retain:
-        #      default: 14
+        doorbell:
+          ffmpeg:
+            inputs:
+              - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@10.0.20.26:554/cam/realmonitor?channel=1&subtype=1&authbasic=64
+                roles:
+                  - detect
+                  - rtmp
+              - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@10.0.20.26:554/
+                roles:
+                  - record
+          detect:
+            width: 1280
+            height: 720
+            fps: 10
+          rtmp:
+            enabled: True
+          record:
+            enabled: True
+            retain_days: 14
+            events:
+              retain:
+                default: 14
+          snapshots:
+            enabled: True
+            timestamp: False
+            retain:
+              default: 14
 
     podAnnotations:
       configmap.reloader.stakater.com/reload: "frigate-config"
