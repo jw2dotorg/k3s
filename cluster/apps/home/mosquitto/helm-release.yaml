@@ -4,6 +4,9 @@ kind: HelmRelease
 metadata:
   name: mosquitto
   namespace: home
+  # TEMP DISABLE##############
+  annotations:
+    fluxcd.io/ignore: "true"
 spec:
   interval: 5m
   chart:
