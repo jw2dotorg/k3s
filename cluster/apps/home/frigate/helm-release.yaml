@@ -257,9 +257,15 @@ spec:
               - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@10.0.20.26:554/
                 roles:
                   - record
+          objects:
+            track:
+              - person
+              - dog
+              - cat
+              - bicycle
           detect:
-            width: 1280
-            height: 720
+            width: 720
+            height: 576
             fps: 10
           rtmp:
             enabled: True
