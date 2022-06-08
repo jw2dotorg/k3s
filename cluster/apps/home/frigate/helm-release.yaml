@@ -97,6 +97,7 @@ spec:
 
       birdseye:
         mode: objects
+        quality: 4
 
       # Global ffmpeg configuration
       ffmpeg:
@@ -247,11 +248,16 @@ spec:
             timestamp: False
             retain:
               default: 14
-          objects:
-            filters:
-              car:
-                mask:
-                  - 0,169,0,432,723,0,397,0
+          zones:
+            neighbors_driveway:
+              coordinates: 0,0,0,424,719,0
+				  objects:  # everything but cars
+					 - person
+					 - dog
+					 - cat
+					 - bicycle
+            my_driveway:
+              coordinates: 716,0,1280,0,971,720,0,720,0,422
         doorbell:
           ffmpeg:
             inputs:
