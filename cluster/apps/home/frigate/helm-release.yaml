@@ -247,6 +247,11 @@ spec:
             timestamp: False
             retain:
               default: 14
+		    objects:
+			   filters:
+				  car:
+				    mask:
+					   - 0,169,0,432,723,0,397,0
         doorbell:
           ffmpeg:
             inputs:
