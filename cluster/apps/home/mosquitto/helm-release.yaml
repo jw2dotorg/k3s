@@ -4,9 +4,6 @@ kind: HelmRelease
 metadata:
   name: mosquitto
   namespace: home
-  # TEMP DISABLE##############
-  #annotations:
-  #  fluxcd.io/ignore: "true"
 spec:
   interval: 5m
   chart:
@@ -23,12 +20,12 @@ spec:
     image:
       repository: ghcr.io/k8s-at-home/eclipse-mosquitto
       tag: v2.0.14
-    service:
-      main:
-        type: LoadBalancer
-        externalIPs:
-          - "${SVC_MOSQUITTO_ADDR}"
-        externalTrafficPolicy: Local
+    #service:
+    #  main:
+    #    type: LoadBalancer
+    #    externalIPs:
+    #      - "${SVC_MOSQUITTO_ADDR}"
+    #    externalTrafficPolicy: Local
     auth:
       enabled: true
     persistence:
