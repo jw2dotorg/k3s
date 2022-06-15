@@ -20,6 +20,7 @@ spec:
     image:
       repository: bitnami/wordpress
       tag: 5.9.2-debian-10-r2
+      debug: true
     service:
       type: ClusterIP
     ingress:
