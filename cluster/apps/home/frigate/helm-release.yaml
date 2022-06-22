@@ -131,15 +131,15 @@ spec:
             enabled: True
           record:
             enabled: True
-            retain_days: 14
+            retain_days: 10
             events:
               retain:
-                default: 14
+                default: 10
           snapshots:
             enabled: True
             timestamp: False
             retain:
-              default: 14
+              default: 10
         driveway:
           ffmpeg:
             inputs:
@@ -158,15 +158,15 @@ spec:
             enabled: True
           record:
             enabled: True
-            retain_days: 14
+            retain_days: 10
             events:
               retain:
-                default: 14
+                default: 10
           snapshots:
             enabled: True
             timestamp: False
             retain:
-              default: 14
+              default: 10
         porch:
           ffmpeg:
             inputs:
@@ -185,15 +185,15 @@ spec:
             enabled: True
           record:
             enabled: True
-            retain_days: 14
+            retain_days: 10
             events:
               retain:
-                default: 14
+                default: 10
           snapshots:
             enabled: True
             timestamp: False
             retain:
-              default: 14
+              default: 10
         front:
           ffmpeg:
             inputs:
@@ -212,15 +212,15 @@ spec:
             enabled: True
           record:
             enabled: True
-            retain_days: 14
+            retain_days: 10
             events:
               retain:
-                default: 14
+                default: 10
           snapshots:
             enabled: True
             timestamp: False
             retain:
-              default: 14
+              default: 10
         side-garage:
           ffmpeg:
             inputs:
@@ -239,15 +239,15 @@ spec:
             enabled: True
           record:
             enabled: True
-            retain_days: 14
+            retain_days: 10
             events:
               retain:
-                default: 14
+                default: 10
           snapshots:
             enabled: True
             timestamp: False
             retain:
-              default: 14
+              default: 10
           zones:
             neighbors_driveway:
               coordinates: 0,0,0,424,719,0
@@ -282,15 +282,15 @@ spec:
             enabled: True
           record:
             enabled: True
-            retain_days: 14
+            retain_days: 10
             events:
               retain:
-                default: 14
+                default: 10
           snapshots:
             enabled: True
             timestamp: False
             retain:
-              default: 14
+              default: 10
 
     podAnnotations:
       configmap.reloader.stakater.com/reload: "frigate-config"
