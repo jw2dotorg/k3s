@@ -131,7 +131,8 @@ spec:
             enabled: True
           record:
             enabled: True
-            days: 10
+            retain:
+              days: 10
             events:
               retain:
                 default: 10
@@ -158,7 +159,8 @@ spec:
             enabled: True
           record:
             enabled: True
-            days: 10
+            retain:
+              days: 10
             events:
               retain:
                 default: 10
@@ -185,7 +187,8 @@ spec:
             enabled: True
           record:
             enabled: True
-            days: 10
+            retain:
+              days: 10
             events:
               retain:
                 default: 10
@@ -212,7 +215,8 @@ spec:
             enabled: True
           record:
             enabled: True
-            days: 10
+            retain:
+              days: 10
             events:
               retain:
                 default: 10
@@ -239,7 +243,8 @@ spec:
             enabled: True
           record:
             enabled: True
-            days: 10
+            retain:
+              days: 10
             events:
               retain:
                 default: 10
@@ -282,7 +287,8 @@ spec:
             enabled: True
           record:
             enabled: True
-            days: 10
+            retain:
+              days: 10
             events:
               retain:
                 default: 10
