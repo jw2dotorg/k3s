@@ -111,7 +111,23 @@ spec:
         output_args:
           record: -f segment -segment_time 10 -segment_format mp4 -reset_timestamps 1 -strftime 1 -c:v copy -c:a aac
 
-       # Specify camera's
+      # Global recording options
+      record:
+        enabled: True
+        retain:
+          days: 14
+          mode: motion
+        events:
+          retain:
+            default: 14
+            mode: motion
+      snapshots:
+        enabled: True
+        timestamp: False
+        retain:
+          default: 14
+
+      # Cameras
       cameras:
         backyard:
           ffmpeg:
@@ -127,20 +143,6 @@ spec:
             width: 1280
             height: 720
             fps: 10
-          rtmp:
-            enabled: True
-          record:
-            enabled: True
-            retain:
-              days: 10
-            events:
-              retain:
-                default: 10
-          snapshots:
-            enabled: True
-            timestamp: False
-            retain:
-              default: 10
         driveway:
           ffmpeg:
             inputs:
@@ -155,20 +157,6 @@ spec:
             width: 1280
             height: 720
             fps: 10
-          rtmp:
-            enabled: True
-          record:
-            enabled: True
-            retain:
-              days: 10
-            events:
-              retain:
-                default: 10
-          snapshots:
-            enabled: True
-            timestamp: False
-            retain:
-              default: 10
         porch:
           ffmpeg:
             inputs:
@@ -183,20 +171,6 @@ spec:
             width: 1280
             height: 720
             fps: 10
-          rtmp:
-            enabled: True
-          record:
-            enabled: True
-            retain:
-              days: 10
-            events:
-              retain:
-                default: 10
-          snapshots:
-            enabled: True
-            timestamp: False
-            retain:
-              default: 10
         front:
           ffmpeg:
             inputs:
@@ -211,20 +185,6 @@ spec:
             width: 1280
             height: 720
             fps: 10
-          rtmp:
-            enabled: True
-          record:
-            enabled: True
-            retain:
-              days: 10
-            events:
-              retain:
-                default: 10
-          snapshots:
-            enabled: True
-            timestamp: False
-            retain:
-              default: 10
         side-garage:
           ffmpeg:
             inputs:
@@ -239,20 +199,6 @@ spec:
             width: 1280
             height: 720
             fps: 10
-          rtmp:
-            enabled: True
-          record:
-            enabled: True
-            retain:
-              days: 10
-            events:
-              retain:
-                default: 10
-          snapshots:
-            enabled: True
-            timestamp: False
-            retain:
-              default: 10
           zones:
             neighbors_driveway:
               coordinates: 0,0,0,424,719,0
@@ -283,20 +229,6 @@ spec:
             width: 720
             height: 576
             fps: 10
-          rtmp:
-            enabled: True
-          record:
-            enabled: True
-            retain:
-              days: 10
-            events:
-              retain:
-                default: 10
-          snapshots:
-            enabled: True
-            timestamp: False
-            retain:
-              default: 10
 
     podAnnotations:
       configmap.reloader.stakater.com/reload: "frigate-config"
