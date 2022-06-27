@@ -99,6 +99,9 @@ spec:
         mode: objects
         quality: 4
 
+      live:
+        quality: 1
+
       # Global ffmpeg configuration
       ffmpeg:
         hwaccel_args:
