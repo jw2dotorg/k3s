@@ -74,7 +74,7 @@ spec:
         password: ${SECRET_MQTT_PASSWORD}
 
       database:
-        path: /data/frigate.db
+        path: /data/frigate-new.db
 
       # detectors:
       #   coral:
