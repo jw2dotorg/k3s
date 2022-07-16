@@ -10,8 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: frigate
-      #version: 8.1.2
-      version: 7.1.0
+      version: 8.1.2
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -67,11 +66,21 @@ spec:
         medium: Memory
         sizeLimit: 2Gi
         mountPath: /dev/shm
+
+    resources:
+      requests:
+        gpu.intel.com/i915: 1
+        memory: 500Mi
+        cpu: 1000m
+      limits:
+        gpu.intel.com/i915: 1
+        memory: 3000Mi
+
     configmap:
       config:
         enabled: true
         data:
-          config.yaml: |
+          config.yml: |
             mqtt:
               host: mosquitto
               topic_prefix: frigate
@@ -228,12 +237,3 @@ spec:
                     - dog
                     - cat
                     - bicycle
-
-    resources:
-      requests:
-        gpu.intel.com/i915: 1
-        memory: 500Mi
-        cpu: 1000m
-      limits:
-        gpu.intel.com/i915: 1
-        memory: 3000Mi
