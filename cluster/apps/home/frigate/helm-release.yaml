@@ -153,10 +153,10 @@ spec:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-backyard.${SECRET_DOMAIN}/live
                       roles:
                         - record
-              detect:
-                width: 1280
-                height: 720
-                fps: 10
+                detect:
+                  width: 1280
+                  height: 720
+                  fps: 10
 
               driveway:
                 ffmpeg:
