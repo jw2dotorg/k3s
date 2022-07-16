@@ -13,7 +13,7 @@ spec:
       version: 0.1.24
       sourceRef:
         kind: HelmRepository
-        name: smokeping-charts
+        name: smokeping
         namespace: flux-system
       interval: 5m
   values:
