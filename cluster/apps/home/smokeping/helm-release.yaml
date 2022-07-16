@@ -23,9 +23,8 @@ spec:
       privileged: true
     ingress:
       enabled: true
-      ingressClassName: "traefik"
+      ingressClassName: "nginx"
       annotations:
-        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         cert-manager.io/cluster-issuer: "letsencrypt-production"
       hosts:
       - host: "ping.${SECRET_DOMAIN}"

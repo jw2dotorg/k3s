@@ -27,10 +27,9 @@ spec:
       enabled: true
       hostname: "house.${SECRET_DOMAIN}"
       tls: true
-      ingressClassName: "traefik"
+      ingressClassName: "nginx"
       annotations:
         cert-manager.io/cluster-issuer: "letsencrypt-production"
-        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     persistence:
       storageClass: nfs-client
     mariadb:
