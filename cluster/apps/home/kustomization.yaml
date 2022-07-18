@@ -6,5 +6,6 @@ resources:
   - mosquitto
   - frigate
   - zwavejs2mqtt
+  - zigbee2mqtt
   - smokeping
   - eufy-security-ws
