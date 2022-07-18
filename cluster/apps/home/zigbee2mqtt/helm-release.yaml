@@ -62,4 +62,3 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2289066-if00
-        hostPathType: CharDevice
