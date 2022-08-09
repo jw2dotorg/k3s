@@ -143,6 +143,20 @@ spec:
                 default: 14
 
             cameras:
+              garage:
+                ffmpeg:
+                  inputs:
+                    - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-garage.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
+                      roles:
+                        - detect
+                        - rtmp
+                    - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-garage.${SECRET_DOMAIN}/live
+                      roles:
+                        - record
+                detect:
+                  width: 1280
+                  height: 720
+                  fps: 10
               backyard:
                 ffmpeg:
                   inputs:
