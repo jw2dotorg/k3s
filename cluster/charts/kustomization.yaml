@@ -15,4 +15,3 @@ resources:
   - nfs-subdir-external-provisioner.yaml
   - smokeping.yaml
   - stakater.yaml
-  - weaveworks-kured.yaml
