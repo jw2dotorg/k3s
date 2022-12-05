@@ -100,10 +100,10 @@ spec:
             database:
               path: /data/frigate-new.db
 
-	         detectors:
-		        coral:
-		          type: edgetpu
-		          device: usb
+            detectors:
+              coral:
+                type: edgetpu
+                device: usb
 
             objects:
               track:
