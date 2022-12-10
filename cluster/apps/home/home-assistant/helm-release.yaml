@@ -41,3 +41,7 @@ spec:
       config:
         enabled: true
         existingClaim: home-assistant-config
+      usb:
+        enabled: true
+        type: hostPath
+        hostPath: /run/dbus
