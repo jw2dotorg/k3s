@@ -115,7 +115,7 @@ spec:
 
             birdseye:
               mode: objects
-              quality: 10
+              quality: 1
 
             live:
               quality: 1
@@ -130,6 +130,11 @@ spec:
                 - yuv420p
               output_args:
                 record: -f segment -segment_time 10 -segment_format mp4 -reset_timestamps 1 -strftime 1 -c:v copy -c:a aac
+
+            detect:
+              width: 1280
+              height: 720
+              fps: 5
 
             record:
               enabled: True
@@ -158,10 +163,6 @@ spec:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-garage.${SECRET_DOMAIN}/live
                       roles:
                         - record
-                detect:
-                  width: 1280
-                  height: 720
-                  fps: 10
               backyard:
                 ffmpeg:
                   inputs:
@@ -172,11 +173,6 @@ spec:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-backyard.${SECRET_DOMAIN}/live
                       roles:
                         - record
-                detect:
-                  width: 1280
-                  height: 720
-                  fps: 10
-
               driveway:
                 ffmpeg:
                  inputs:
@@ -187,11 +183,6 @@ spec:
                    - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-driveway.${SECRET_DOMAIN}/live
                      roles:
                        - record
-                detect:
-                  width: 1280
-                  height: 720
-                  fps: 10
-
               porch:
                 ffmpeg:
                  inputs:
@@ -202,11 +193,6 @@ spec:
                    - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-porch.${SECRET_DOMAIN}/live
                      roles:
                        - record
-                detect:
-                  width: 1280
-                  height: 720
-                  fps: 10
-
               front:
                 ffmpeg:
                   inputs:
@@ -217,25 +203,16 @@ spec:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-front.${SECRET_DOMAIN}/live
                       roles:
                         - record
-                detect:
-                  width: 1280
-                  height: 720
-                  fps: 10
-
               side-garage:
                 ffmpeg:
                   inputs:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-sidegarage.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
                       roles:
                         - detect
+                        - rtmp
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-sidegarage.${SECRET_DOMAIN}/live
                       roles:
                         - record
-                        - rtmp
-                detect:
-                  width: 1280
-                  height: 720
-                  fps: 10
                 zones:
                   neighbors_driveway:
                     coordinates: 0,0,0,424,719,0
@@ -246,17 +223,16 @@ spec:
                       - bicycle
                   my_driveway:
                     coordinates: 716,0,1280,0,971,720,0,720,0,422
-
               doorbell:
                 ffmpeg:
                   inputs:
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=1
                       roles:
                         - detect
+                        - rtmp
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/
                       roles:
                         - record
-                        - rtmp
                 detect:
                   width: 720
                   height: 576
