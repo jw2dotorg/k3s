@@ -39,7 +39,7 @@ spec:
         rootPassword: "${HOUSE_MARIADB_AUTH_ROOTPASSWORD}"
         database: house
         username: "${HOUSE_WORDPRESS_USERNAME}"
-        password: "${HOUSE_WORDPRESS_USERNAME}"
+        password: "${HOUSE_WORDPRESS_PASSWORD}"
       primary:
         persistence:
           storageClass: nfs-client
