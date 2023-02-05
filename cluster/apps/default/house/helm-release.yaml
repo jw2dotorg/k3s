@@ -36,8 +36,10 @@ spec:
       enabled: true
       debug: true
       auth:
+        rootPassword: "${HOUSE_MARIADB_AUTH_ROOTPASSWORD}"
         database: house
-        username: house
+        username: "${HOUSE_WORDPRESS_USERNAME}"
+        password: "${HOUSE_WORDPRESS_USERNAME}"
       primary:
         persistence:
           storageClass: nfs-client
