@@ -115,7 +115,7 @@ spec:
 
             birdseye:
               mode: objects
-              quality: 4
+              quality: 10
 
             live:
               quality: 1
@@ -134,18 +134,18 @@ spec:
             record:
               enabled: True
               retain:
-                days: 14
+                days: 30
                 mode: motion
               events:
                 retain:
-                  default: 14
+                  default: 30
                   mode: motion
 
             snapshots:
               enabled: True
               timestamp: False
               retain:
-                default: 14
+                default: 30
 
             cameras:
               garage:
@@ -250,11 +250,13 @@ spec:
               doorbell:
                 ffmpeg:
                   inputs:
-                    - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/
+                    - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=1
                       roles:
                         - detect
-                        - record
                         - rtmp
+                    - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/
+                      roles:
+                        - record
                 detect:
                   width: 720
                   height: 576
