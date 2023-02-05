@@ -228,10 +228,10 @@ spec:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-sidegarage.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
                       roles:
                         - detect
-                        - rtmp
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-sidegarage.${SECRET_DOMAIN}/live
                       roles:
                         - record
+                        - rtmp
                 detect:
                   width: 1280
                   height: 720
@@ -253,10 +253,10 @@ spec:
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=1
                       roles:
                         - detect
-                        - rtmp
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/
                       roles:
                         - record
+                        - rtmp
                 detect:
                   width: 720
                   height: 576
