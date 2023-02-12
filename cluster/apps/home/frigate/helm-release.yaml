@@ -163,6 +163,12 @@ spec:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-garage.${SECRET_DOMAIN}/live
                       roles:
                         - record
+                objects:
+                  track:
+                    - person
+                    - dog
+                    - cat
+                    - bicycle
               backyard:
                 ffmpeg:
                   inputs:
