@@ -10,7 +10,7 @@ spec:
       # registryUrl=https://k8s-at-home.com/charts/
       # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: home-assistant
-      version: 13.3.0
+      version: 13.4.2
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: homeassistant/home-assistant
-      tag: 2022.11.4
+      tag: 2023.2.3
     env:
       TZ: America/NewYork
     ingress:
