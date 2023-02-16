@@ -154,6 +154,8 @@ spec:
 
             cameras:
               garage:
+                ui: 
+                  order: 6
                 ffmpeg:
                   inputs:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-garage.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
@@ -170,6 +172,8 @@ spec:
                     - cat
                     - bicycle
               backyard:
+                ui: 
+                  order: 5
                 ffmpeg:
                   inputs:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-backyard.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
@@ -180,6 +184,8 @@ spec:
                       roles:
                         - record
               driveway:
+                ui: 
+                  order: 2
                 ffmpeg:
                  inputs:
                    - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-driveway.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
@@ -190,6 +196,8 @@ spec:
                      roles:
                        - record
               porch:
+                ui: 
+                  order: 4
                 ffmpeg:
                  inputs:
                    - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-porch.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
@@ -200,6 +208,8 @@ spec:
                      roles:
                        - record
               front:
+                ui: 
+                  order: 3
                 ffmpeg:
                   inputs:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-front.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
@@ -210,6 +220,8 @@ spec:
                       roles:
                         - record
               side-garage:
+                ui: 
+                  order: 1
                 ffmpeg:
                   inputs:
                     - path: rtsp://view:${FRIGATE_RTSP_PASSWORD}@cam-sidegarage.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=2
@@ -230,6 +242,8 @@ spec:
                   my_driveway:
                     coordinates: 716,0,1280,0,971,720,0,720,0,422
               doorbell:
+                ui: 
+                  order: 7
                 ffmpeg:
                   inputs:
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=1
