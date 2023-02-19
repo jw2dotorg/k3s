@@ -45,3 +45,7 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /run/dbus
+
+    # For Bluetooth?
+    securityContext:
+      privileged: true
