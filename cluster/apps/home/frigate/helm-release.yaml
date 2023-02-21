@@ -249,7 +249,6 @@ spec:
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/cam/realmonitor?channel=1&subtype=1
                       roles:
                         - detect
-                        - rtmp
                     - path: rtsp://admin:${FRIGATE_DOORBELL_PASSWORD}@doorbell.${SECRET_DOMAIN}/
                       roles:
                         - record
