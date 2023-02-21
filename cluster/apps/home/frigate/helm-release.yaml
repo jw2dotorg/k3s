@@ -257,6 +257,10 @@ spec:
                   width: 720
                   height: 576
                   fps: 10
+                record:
+                  width: 2560
+                  height: 1920
+                  fps: 15
                 objects:
                   track:
                     - person
