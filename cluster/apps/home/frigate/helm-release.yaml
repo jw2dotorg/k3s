@@ -20,7 +20,7 @@ spec:
     - name: mosquitto
   values:
     env:
-      TZ: America/NewYork
+      TZ: America/New_York
     image:
       repository: blakeblackshear/frigate
       tag: 0.11.1
