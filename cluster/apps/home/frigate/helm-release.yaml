@@ -23,7 +23,7 @@ spec:
       TZ: America/New_York
     image:
       repository: blakeblackshear/frigate
-      tag: 0.11.1
+      tag: 0.12.0
     ingress:
       main:
         enabled: true
