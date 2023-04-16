@@ -154,6 +154,11 @@ spec:
               retain:
                 default: 30
 
+            go2rtc:
+              streams:
+                doorbell:
+                  - rtsp://admin:R4@uHTHve7hdbB@doorbell.jw2.org/
+
             cameras:
               garage:
                 ui: 
