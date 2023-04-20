@@ -5,7 +5,7 @@ resources:
   - home-assistant
   - mosquitto
   - frigate
-  - zwavejs2mqtt
+  - zwave-js-ui
   - zigbee2mqtt
   - smokeping
   - eufy-security-ws
