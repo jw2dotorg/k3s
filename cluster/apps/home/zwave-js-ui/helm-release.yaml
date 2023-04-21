@@ -30,8 +30,7 @@ spec:
     service:
       main:
         ports:
-          websockets:
-            enabled: true
+          http: 
             port: 3000
     ingress:
       main:
